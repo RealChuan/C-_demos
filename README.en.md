@@ -6,7 +6,7 @@
 ## Code structure
 
 1.  [Algorithm](/Algorithm/)
-    1.  [Search](/Algorithm/Search/search.hpp)——Implementation of various search algorithms, as well as unit testing and performance testing based on Google benchmark;
+    1.  [Search](/Algorithm/Search/search.hpp)——各种查找算法的实现，以及单元测试和基于google benchmark的性能测试；
         1.  [std_search_examples](/Algorithm/Search/std_search_examples.cc)——Examples of search algorithms in stl;
     2.  [Sort](/Algorithm/Sort/sort.hpp)——Implementation of various sorting algorithms, as well as unit testing and performance testing based on Google benchmark;
         1.  [std_sort_examples](/Algorithm/Sort/std_sort_examples.cc)——Examples of sorting algorithms in stl;
@@ -25,14 +25,14 @@
 14. [MVC](/DesignPattern/MVC/model.hpp)——mvc mode;
 15. [Observer](/DesignPattern/Observer/observer.hpp)——Observer mode;
 16. [Singleton](/DesignPattern/Singleton/singleton.hpp)——Single case mode;
-17. [GlobMatch](/GlobMatch/globmatcher.hpp)——glob模式匹配的简单实现;
+17. [GlobMatch](/GlobMatch/globmatcher.hpp)——Simple implementation of glob pattern matching;
 18. [Hawthorn](/Glog/main.cc)——Google glog example;
 19. [Icmp](/Icmp/icmp.hpp)——Simple encapsulation of linux icmp protocol;
 20. [LinkedList](/LinkedList/linkedlist.hpp)——Related operations of linked lists, including insertion, removal, reversal, and printing;
 21. [Memcpy](/Memcpy/memcpy.hpp)——`memcpy`function implementation;
-22. [MonitorDir](/MonitorDir/monitordir.hpp)——windows(`ReadDirectoryChangesW`)，macos(`FSEvents`) and linux(`fanotify`和`inotify`) Simple example of directory monitoring;
+22. [MonitorDir](/MonitorDir/monitordir.hpp)——windows(`ReadDirectoryChangesW`)，macos(`FSEvents`) and linux(`fanotify`and`inotify`) Simple example of directory monitoring;
     1.  `fanotify`used in`global`mode, in`fanotify_mark`Join in`FAN_MARK_FILESYSTEM`(need`CAP_SYS_ADMIN`ability, that is, root permissions) this`flag`, all events on the specified file system will be monitored, and then the required events can be filtered according to the specified monitored folder directory. This function is better than`inotify`more powerful;
-        1.  To obtain the upper-level path where the event file is located, use`open_by_handle_at`This method will appear under ordinary users`Operation not permitted`Error, also needed`CAP_SYS_ADMIN`Ability, i.e. root authority;
+        1.  To obtain the upper-level path where the event file is located, use`open_by_handle_at`This method will appear under ordinary users`Operation not permitted`Error, also needed`CAP_SYS_ADMIN`Ability, that is, root authority;
         2.  It is recommended to run with root privileges. If you must run it under an ordinary user, it is still recommended to use`inotify`instead of`fanotify`, anyway, opening a monitoring file descriptor (`fd`), it is impossible to achieve`subtree`monitor;
 23. [MonitorDir_EFSW](/MonitorDir_EFSW/main.cc)——A simple example of directory monitoring using efsw;
 24. [Mutex](/Mutex/mutex.hpp)——Simple mutex lock and spin lock implemented using std::atomic_flag;
@@ -46,10 +46,11 @@
     7.  [sm4](/OpenSSL/openssl_sm4.cc)——Examples of sm4 encryption and decryption;
     8.  [Kskh09](/OpenSSL/openssl_x509.cc)——Example of x509 certificate;
     9.  [bash](/OpenSSL/openssl_bash.sh)——openssl command line example;
-26. [Server](/Server)——Some examples of linux server;
+26. [SafeCallback](/SafeCallback/safecallback.hpp)——Implementation of life cycle safe callback function, reference[muduo WeakCallback](https://github.com/chenshuo/muduo/blob/cpp17/muduo/base/WeakCallback.h)；
+27. [Server](/Server)——Some examples of linux server;
     1.  [server_epoll](/Server/server_epoll.cc)——epoll example;
     2.  [server_poll](/Server/server_poll.cc)——Poll example;
     3.  [server_select](/Server/server_select.cc)——Example of select;
-27. [Thread](/Thread/)——Thread class implemented based on std::thread, including thread pool;
+28. [Thread](/Thread/)——Thread class implemented based on std::thread, including thread pool;
     1.  [Thread](/Thread/thread.hpp)——Thread class;
     2.  [ThreadPool](/Thread/threadpool.hpp)——Thread pool;
